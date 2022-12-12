@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { SignIn, SignOut, useAuthentication } from '../../components/services/authService'
-import { createItem, fetchItems } from '../../components/services/itemService'
+import { createItem, fetchItems, deleteItem } from '../../components/services/itemService'
 import './List.css'
 
 import urlExist from 'url-exist'
@@ -38,6 +38,13 @@ export default function List() {
     })
   }
 
+  const removeItem = async (id) => {
+    await deleteItem(id).then(() => {
+      setItem(null);
+      setItems(items.filter((item) => item.id !== id));
+    });
+  }
+
   const handleChange = event => {
     const { value } = event.target
     console.log('VALUE: ', value)
@@ -55,6 +62,10 @@ export default function List() {
     await addItem({ title: content, body: imageUrl })
   }
 
+  const handleItemClickDelete = async (id) => {
+    await removeItem(id)
+  }
+    
   console.log('ITEMS: ', items)
   console.log('ITEM: ', item)
 
@@ -86,9 +97,9 @@ export default function List() {
         {items.map(item => {
           return (
             <div key={item.id}>
-              <figure>
-                <img src={item.body} alt={item.title} />
-                  <figcaption>{item.title}</figcaption>
+              <figure onClick={() => handleItemClickDelete(item.id)}>
+                <img src={item.body} alt={item.title}/>
+                <figcaption>{item.title}</figcaption>
               </figure>
             </div>
           )
