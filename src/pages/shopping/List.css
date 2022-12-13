@@ -15,8 +15,8 @@ header,
   grid-column: 1 / span 2;
   padding: 10px 5px;
   font-size: 20px;
-  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
-    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva,
+    Verdana, sans-serif;
 }
 
 .title {
@@ -24,7 +24,7 @@ header,
   justify-content: space-between;
   font-size: 30px;
   padding-top: 5px;
-  font-family: Georgia, "Times New Roman", Times, serif;
+  font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
 form {
@@ -51,9 +51,9 @@ article {
 }
 
 nav {
-  color: white;
+  color: #eeeeee;
   text-shadow: 6px 6px 6px rgb(75, 1, 75);
-  background-image: linear-gradient(180deg, blue, rgb(16, 190, 129));
+  background: #393e46;
 }
 
 nav p:hover {
@@ -103,13 +103,46 @@ article .body {
   opacity: 0.9;
 }
 
-.image_owl {
-  width: 30px;
-  height: 30px;
-  margin-left: 3%;
-}
-
 figure {
   display: flex;
   align-items: center;
+}
+
+.header__title {
+  margin: 0;
+  padding-bottom: 0;
+  font-size: 3.49rem;
+  font-weight: 300;
+}
+.container {
+  margin: 0 auto;
+  max-width: 100%;
+  color: #eeeeee;
+  text-align: center;
+}
+.topheader {
+  padding: 20px 0 10px 0;
+  background: #393e46;
+  text-align: center;
+}
+.header__username {
+  margin: 0;
+  font-size: 1.3rem;
+}
+.overall_background {
+  width: auto;
+  height: auto;
+  background-color: #232931;
+}
+.Input {
+  color: #232931;
+}
+input,
+select,
+textarea {
+  color: #eeeeee;
+}
+input,
+textarea {
+  background-color: #4ecca3;
 }

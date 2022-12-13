@@ -1,8 +1,45 @@
 .Home {
-    display: grid;
-    grid-template-columns: auto;
-    grid-template-rows: auto;
-    justify-items: center;
-    align-items: center;
-    background-color: #232931;
+  display: grid;
+}
+.h-page {
+  top: 0;
+  left: 0;
+  bottom: 0;
+  display: grid;
+}
+.topband {
+  background-color: #232931;
+  text-align: center;
+  border-style: solid;
+  border-color: #eeeeee;
+}
+.welcomeband h1 {
+  background-color: #eeeeee;
+  color: #232931;
+}
+.welcomeband {
+  background-color: #eeeeee;
+  color: #232931;
+}
+.chatband {
+  background-color: #4ecca3;
+  border-right: solid;
+  border-left: solid;
+  border-color: #eeeeee;
+}
+.chatband h1 {
+  background-color: #4ecca3;
+}
+.listband {
+  background-color: #393e46;
+  border-color: #eeeeee;
+  border-right: solid;
+  border-left: solid;
+  border-bottom: solid;
+}
+.listband h1 {
+  background-color: #393e46;
+}
+h1 {
+  color: #eeeeee;
 }

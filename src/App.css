@@ -1,16 +1,17 @@
-
 .App-logo {
   height: 70vmin;
   pointer-events: none;
 }
+* {
+  background-color: #232931;
+  color: EEEEEE;
+}
 
 .App {
   text-align: center;
-  background-color: #232931;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
@@ -27,4 +28,8 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.top-nav {
+  align-items: center;
 }
