@@ -12,6 +12,12 @@ We used google docs to create a [Design Document](https://docs.google.com/docume
 | ------------------------------------------------------------------------------------------------- | ------------------------ |
 | [`@daypilot/daypilot-lite-react`](https://code.daypilot.org/42221/react-weekly-calendar-tutorial) | React Calendar Component |
 
+### Spoonacular API
+
+| Name                                                | Description           |
+| --------------------------------------------------- | --------------------- |
+| [Spoonacular API](https://spoonacular.com/food-api) | API for shopping list |
+
 ## Functionality
 
 ### Bulletin Board
