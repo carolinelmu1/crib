@@ -44,7 +44,7 @@ export default function Chat() {
           </button>
         )}
       </header>
-      {!user ? '' : <Nav articles={articles} setArticle={setArticle} />}
+      {!user ? '' : <Nav className="mainNav" articles={articles} setArticle={setArticle} />}
 
       {!user ? (
         ''

@@ -4,7 +4,6 @@
   grid-template-columns: 50% auto;
   height: 100vh;
   overflow: scroll;
-  margin-left: 20%;
 }
 
 header,
@@ -55,6 +54,7 @@ article {
 }
 
 nav {
+  padding-right: 20px;
   color: white;
 }
 
