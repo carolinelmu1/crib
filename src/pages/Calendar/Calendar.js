@@ -14,7 +14,7 @@ const styles = {
   },
   left: {
     marginRight: '10px',
-    marginLeft: '20%',
+    marginLeft: '1%',
   },
   main: {
     flexGrow: '1',
