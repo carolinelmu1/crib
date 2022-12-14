@@ -14,9 +14,15 @@ We used google docs to create a [Design Document](https://docs.google.com/docume
 
 ### Bulletin Board
 
+<img src="/screenshots/bulletinEx.png" />
+
 ### Shopping List
 
+<img src="/screenshots/listEx.png" />
+
 ### Group Calendar
+
+<img src="/screenshots/calendarEx.png" />
 
 ## Created By
 
