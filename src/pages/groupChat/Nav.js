@@ -4,9 +4,11 @@ export default function Nav({ articles, setArticle }) {
       {!articles
         ? 'No chat'
         : articles.map(a => (
-            <p key={a.id} onClick={() => setArticle(a)}>
-              {a.title}
-            </p>
+            <div key={a.id} onClick={() => setArticle(a)}>
+              <h3>{a.displayName}</h3>
+              <p>{a.body}</p>
+              <hr />
+            </div>
           ))}
     </nav>
   )

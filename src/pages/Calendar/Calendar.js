@@ -1,6 +1,12 @@
+import { db } from '../../firebaseConfig'
+import { doc } from 'firebase/firestore'
 import React, { Component } from 'react'
 import { DayPilot, DayPilotCalendar, DayPilotNavigator } from '@daypilot/daypilot-lite-react'
 import './Calendar.css'
+import { setDoc } from 'firebase/firestore'
+import { auth } from '../../firebaseConfig'
+import { deleteCalendarEvent, fetchCalendar } from '../../components/services/calendarService'
+import randomColor from 'randomcolor'
 
 const styles = {
   wrap: {
@@ -19,21 +25,35 @@ class Calendar extends Component {
     super(props)
     this.calendarRef = React.createRef()
     this.state = {
+      mounted: false,
+      loaded: false,
+      events: [],
       viewType: 'Week',
       durationBarVisible: false,
       timeRangeSelectedHandling: 'Enabled',
       onTimeRangeSelected: async args => {
         const dp = this.calendar
-        const modal = await DayPilot.Modal.prompt('Create a new event:', 'Event 1')
+        const modal = await DayPilot.Modal.prompt('Create a new event:', 'Event name')
         dp.clearSelection()
         if (!modal.result) {
           return
         }
-        dp.events.add({
+        const event = {
           start: args.start,
           end: args.end,
           id: DayPilot.guid(),
           text: modal.result,
+          backColor: randomColor(),
+        }
+        dp.events.add(event)
+
+        await setDoc(doc(db, 'events', event.id), {
+          start: `${event.start}`,
+          end: `${event.end}`,
+          id: `${event.id}`,
+          text: `${event.text}`,
+          backColor: `${event.backColor}`,
+          userID: auth.currentUser.uid,
         })
       },
       eventDeleteHandling: 'Update',
@@ -47,6 +67,37 @@ class Calendar extends Component {
         e.data.text = modal.result
         dp.events.update(e)
       },
+      onEventDelete: async args => {
+        // Extract the ID to be deleted
+        const { id } = args.e.data
+        await deleteCalendarEvent(id)
+      },
+      onEventMove: async args => {
+        console.log('EVENT MOVED!!!!', args, args.e.data.id)
+
+        const { id, text, backColor } = args.e.data // extract the ID from the given event data
+
+        await setDoc(doc(db, 'events', id), {
+          start: `${args.newStart}`,
+          end: `${args.newEnd}`,
+          text,
+          backColor,
+          userID: auth.currentUser.uid,
+        })
+      },
+      onEventResize: async args => {
+        console.log('EVENT RESIZED!!!!', args)
+
+        const { id, text, backColor } = args.e.data // extract the ID from the given event data
+
+        await setDoc(doc(db, 'events', id), {
+          start: `${args.newStart}`,
+          end: `${args.newEnd}`,
+          text,
+          backColor,
+          userID: auth.currentUser.uid,
+        })
+      },
     }
   }
 
@@ -54,43 +105,31 @@ class Calendar extends Component {
     return this.calendarRef.current.control
   }
 
-  componentDidMount() {
-    const events = [
-      {
-        id: 1,
-        text: 'Event 1',
-        start: '2023-03-07T10:30:00',
-        end: '2023-03-07T13:00:00',
-      },
-      {
-        id: 2,
-        text: 'Event 2',
-        start: '2023-03-08T09:30:00',
-        end: '2023-03-08T11:30:00',
-        backColor: '#6aa84f',
-      },
-      {
-        id: 3,
-        text: 'Event 3',
-        start: '2023-03-08T12:00:00',
-        end: '2023-03-08T15:00:00',
-        backColor: '#f1c232',
-      },
-      {
-        id: 4,
-        text: 'Event 4',
-        start: '2023-03-06T11:30:00',
-        end: '2023-03-06T14:30:00',
-        backColor: '#cc4125',
-      },
-    ]
+  async componentDidMount() {
+    console.log('CDM START')
 
+    this.setState({ mounted: true })
+    console.log('CDM END')
+  }
+
+  async componentDidUpdate(prevProps, prevState) {
+    console.log('CDU START')
     const startDate = '2023-03-07'
 
-    this.calendar.update({ startDate, events })
+    if (this.state.loaded === false) {
+      console.log('LOADED IS FALSE, so FETCHING CALENDAR EVENTS...')
+      fetchCalendar().then(response => {
+        console.log('FETCH EVENTS RESPONSE: ', JSON.stringify(response, null, 2))
+
+        this.calendar.update({ startDate, events: response })
+      })
+    }
+
+    console.log('CDU END')
   }
 
   render() {
+    console.log('RENDER > STATE EVENTS: ', this.state.events)
     return (
       <div style={styles.wrap}>
         <div style={styles.left}>

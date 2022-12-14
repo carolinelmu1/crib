@@ -2,7 +2,7 @@
 // No other part of the app knows how the data is stored. If anyone wants
 // to read or write data, they have to go through this service.
 
-import { db } from "../../firebaseConfig";
+import { db } from '../../firebaseConfig'
 import {
   collection,
   query,
@@ -13,26 +13,24 @@ import {
   Timestamp,
   deleteDoc,
   doc,
-} from "firebase/firestore";
+} from 'firebase/firestore'
 
 export async function createItem({ title, body }) {
-  const data = { title, body, date: Timestamp.now().toDate().toString() };
-  const docRef = await addDoc(collection(db, "items"), data);
-  return { id: docRef.id, ...data };
+  const data = { title, body, date: Timestamp.now().toDate().toString() }
+  const docRef = await addDoc(collection(db, 'items'), data)
+  return { id: docRef.id, ...data }
 }
 
 // NOT FINISHED: This only gets the first 20 articles. In a real app,
 // you implement pagination.
 export async function fetchItems() {
-  const snapshot = await getDocs(
-    query(collection(db, "items"), orderBy("date", "desc"), limit(20))
-  );
-  return snapshot.docs.map((doc) => ({
+  const snapshot = await getDocs(query(collection(db, 'items'), orderBy('date', 'desc'), limit(20)))
+  return snapshot.docs.map(doc => ({
     id: doc.id,
     ...doc.data(),
-  }));
+  }))
 }
 
 export async function deleteItem(id) {
-  await deleteDoc(doc(db, "items", id));
+  await deleteDoc(doc(db, 'items', id))
 }

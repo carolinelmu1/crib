@@ -1,17 +1,25 @@
-import { useState } from "react";
+import { useState } from 'react'
+import { useAuthentication } from '../../components/services/authService'
+import { auth } from '../../firebaseConfig'
 
-export default function ArticleEntry({ addArticle }) {
-  const [title, setTitle] = useState("");
-  const [body, setBody] = useState("");
-  const [error, setError] = useState(null);
+const ArticleEntry = props => {
+  const { addArticle } = props
+  const user = useAuthentication()
+  console.log('USER: ', user)
 
-  function submit(e) {
-    setError(null);
-    e.preventDefault();
+  const [title, setTitle] = useState('')
+  const [body, setBody] = useState('')
+  const [error, setError] = useState(null)
+
+  const submit = e => {
+    setError(null)
+    e.preventDefault()
     if (!title.trim() || !body.trim()) {
-      setError("Both the title and body must be supplied");
+      setError('Both the title and body must be supplied')
     } else {
-      addArticle({ title, body });
+      const { displayName } = auth.currentUser
+      console.log('DISPLAY NAME: ', displayName)
+      addArticle({ displayName, title, body })
     }
   }
 
@@ -20,15 +28,13 @@ export default function ArticleEntry({ addArticle }) {
       <form onSubmit={submit}>
         {error && <p className="error">{error}</p>}
         Title
-        <input value={title} onChange={(e) => setTitle(e.target.value)} />
+        <input value={title} onChange={e => setTitle(e.target.value)} />
         Body
-        <textarea
-          rows="8"
-          value={body}
-          onChange={(e) => setBody(e.target.value)}
-        ></textarea>
+        <textarea rows="8" value={body} onChange={e => setBody(e.target.value)}></textarea>
         <button type="submit">Create</button>
       </form>
     </div>
-  );
+  )
 }
+
+export default ArticleEntry

@@ -6,18 +6,10 @@ const Navbar = () => {
     <>
       <Nav>
         <NavMenu>
-          <NavLink to="/" activeStyle>
-            Home
-          </NavLink>
-          <NavLink to="/chat" activeStyle>
-            Chat
-          </NavLink>
-          <NavLink to="/list" activeStyle>
-            List
-          </NavLink>
-          <NavLink to="/calendar" activeStyle>
-            Calendar
-          </NavLink>
+          <NavLink to="/">Home</NavLink>
+          <NavLink to="/chat">Chat</NavLink>
+          <NavLink to="/list">List</NavLink>
+          <NavLink to="/calendar">Calendar</NavLink>
         </NavMenu>
       </Nav>
     </>
