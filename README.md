@@ -21,5 +21,6 @@ We used google docs to create a [Design Document](https://docs.google.com/docume
 ### Group Calendar
 
 ## Created By
+Breea Toomey, Jack Seymour, Denali Tonn, Caroline Ellis
 
 ## License
