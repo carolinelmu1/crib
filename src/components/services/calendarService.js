@@ -33,6 +33,6 @@ export async function fetchCalendar() {
   }))
 }
 
-export async function deleteCalendar(id) {
-  await deleteDoc(doc(db, 'calendar', id))
+export async function deleteCalendarEvent(id) {
+  await deleteDoc(doc(db, 'events', id))
 }

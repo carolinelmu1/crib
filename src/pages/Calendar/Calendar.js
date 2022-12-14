@@ -1,21 +1,11 @@
 import { db } from '../../firebaseConfig'
-import {
-  // collection,
-  // query,
-  // getDocs,
-  // addDoc,
-  // orderBy,
-  // limit,
-  // Timestamp,
-  // deleteDoc,
-  doc,
-} from 'firebase/firestore'
+import { doc } from 'firebase/firestore'
 import React, { Component } from 'react'
 import { DayPilot, DayPilotCalendar, DayPilotNavigator } from '@daypilot/daypilot-lite-react'
 import './Calendar.css'
-import { setDoc, deleteDoc } from 'firebase/firestore'
+import { setDoc } from 'firebase/firestore'
 import { auth } from '../../firebaseConfig'
-import { fetchCalendar } from '../../components/services/calendarService'
+import { deleteCalendarEvent, fetchCalendar } from '../../components/services/calendarService'
 
 const styles = {
   wrap: {
@@ -75,17 +65,9 @@ class Calendar extends Component {
         dp.events.update(e)
       },
       onEventDelete: async args => {
-        console.log('DELETE EVENT!!!!', args)
-
         // Extract the ID to be deleted
-        const { id, text, start, end, userID } = args.e.data
-        // Call deleteDoc(....)
-        await deleteDoc(doc(db, 'events', id), {
-          start,
-          end,
-          text,
-          userID,
-        })
+        const { id } = args.e.data
+        await deleteCalendarEvent(id)
       },
       onEventMove: async args => {
         console.log('EVENT MOVED!!!!', args, args.e.data.id)
