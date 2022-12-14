@@ -15,6 +15,9 @@ const Navbar = () => {
           <NavLink to="/list" activeStyle>
             List
           </NavLink>
+          <NavLink to="/calendar" activeStyle>
+            Calendar
+          </NavLink>
         </NavMenu>
       </Nav>
     </>

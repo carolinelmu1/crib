@@ -4,6 +4,7 @@ import Navbar from './components/Navbar'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import Chat from './pages/groupChat/Chat'
 import List from './pages/shopping/List'
+import Calendar from './pages/Calendar/Calendar'
 import Home from './pages'
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
             <Route exact path="/" element={<Home />} />
             <Route path="/Chat" element={<Chat />} />
             <Route path="/list" element={<List />} />
+            <Route path="/Calendar" element={<Calendar />} />
           </Routes>
         </Router>
       </div>
