@@ -6,40 +6,78 @@
   left: 0;
   bottom: 0;
   display: grid;
+  margin-left: 20%;
 }
 .topband {
   background-color: #232931;
   text-align: center;
   border-style: solid;
   border-color: #eeeeee;
+  font-size: x-large;
 }
 .welcomeband h1 {
   background-color: #eeeeee;
   color: #232931;
+  text-align: left;
 }
 .welcomeband {
   background-color: #eeeeee;
   color: #232931;
+  font-size: medium;
+  line-height: 1.6;
+  font-size: large;
+  text-align: center;
+  padding-right: 100px;
+  padding-left: 60px;
 }
 .chatband {
   background-color: #4ecca3;
   border-right: solid;
   border-left: solid;
   border-color: #eeeeee;
+  line-height: 1.6;
+  font-size: large;
+  text-align: center;
+  padding-right: 100px;
+  padding-left: 60px;
 }
 .chatband h1 {
   background-color: #4ecca3;
+  text-align: left;
 }
 .listband {
   background-color: #393e46;
   border-color: #eeeeee;
   border-right: solid;
   border-left: solid;
-  border-bottom: solid;
+  line-height: 1.6;
+  font-size: large;
+  text-align: center;
+  padding-right: 100px;
+  padding-left: 60px;
 }
 .listband h1 {
   background-color: #393e46;
+  text-align: left;
 }
 h1 {
   color: #eeeeee;
+}
+.calenband {
+  background-color: #eeeeee;
+  color: #232931;
+  font-size: large;
+  border-right: solid;
+  border-left: solid;
+  border-bottom: solid;
+  text-align: center;
+  font-size: large;
+  line-height: 1.6;
+  padding-right: 100px;
+  padding-left: 60px;
+}
+.calenband h1 {
+  background-color: #eeeeee;
+  color: #232931;
+  text-align: left;
 }

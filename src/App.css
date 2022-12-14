@@ -29,7 +29,41 @@
     transform: rotate(360deg);
   }
 }
+button {
+  background-color: white;
+}
+.side-nav {
+  top: 0;
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  width: 20%;
+  height: 100%;
+  display: block;
+  color: #eeeeee;
+}
+.side-nav h3 {
+  padding: 10px 0;
+  color: #eeeeee;
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: 600;
+  display: block;
+}
 
-.top-nav {
-  align-items: center;
+.side-nav .primary {
+  opacity: 1;
+}
+.side-nav .primary:hover {
+  opacity: 0.7;
+}
+.side-nav .secondary {
+  opacity: 0.4;
+}
+.side-nav .secondary:hover {
+  opacity: 0.7;
+}
+.top-nav nav {
+  margin-left: 25%;
+  background-color: #232931;
 }
