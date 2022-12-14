@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { useAuthentication } from '../../components/services/authService'
+import { useAuthentication } from '../../services/authService'
 import { auth } from '../../firebaseConfig'
 
 const ArticleEntry = props => {

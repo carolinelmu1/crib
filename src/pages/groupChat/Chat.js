@@ -2,8 +2,8 @@ import { useEffect, useState } from 'react'
 import Nav from './Nav'
 import Article from './Article'
 import ArticleEntry from './ArticleEntry'
-import { useAuthentication } from '../../components/services/authService'
-import { fetchArticles, createArticle } from '../../components/services/articleService'
+import { useAuthentication } from '../../services/authService'
+import { fetchArticles, createArticle } from '../../services/articleService'
 import './Chat.css'
 
 export default function Chat() {

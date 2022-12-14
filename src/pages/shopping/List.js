@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
-import { useAuthentication } from '../../components/services/authService'
-import { createItem, fetchItems, deleteItem } from '../../components/services/itemService'
+import { useAuthentication } from '../../services/authService'
+import { createItem, fetchItems, deleteItem } from '../../services/itemService'
 import './List.css'
 
 import urlExist from 'url-exist'

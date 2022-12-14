@@ -5,7 +5,7 @@ import { DayPilot, DayPilotCalendar, DayPilotNavigator } from '@daypilot/daypilo
 import './Calendar.css'
 import { setDoc } from 'firebase/firestore'
 import { auth } from '../../firebaseConfig'
-import { deleteCalendarEvent, fetchCalendar } from '../../components/services/calendarService'
+import { deleteCalendarEvent, fetchCalendar } from '../../services/calendarService'
 import randomColor from 'randomcolor'
 
 const styles = {

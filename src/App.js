@@ -7,7 +7,7 @@ import List from './pages/shopping/List'
 import Calendar from './pages/Calendar/Calendar'
 import Home from './pages'
 import logo from './logo.png'
-import { SignIn, SignOut, useAuthentication } from './components/services/authService'
+import { SignIn, SignOut, useAuthentication } from './services/authService'
 
 function App() {
   const user = useAuthentication()
