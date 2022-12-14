@@ -7,7 +7,7 @@ The crib is created for people with roommates. As college students, we often str
 
 ### Live Link: https://the-crib-51d5e.web.app
 
-<img src="/screenshots/homeScreen.png" />
+<img src="/screenshots/homeScreen.png" height=300 />
 
 
 
@@ -30,21 +30,21 @@ The crib uses multiple functions to connect its users
 
 ### Bulletin Board
 
-<img src="/screenshots/bulletinEx.png" />
+<img src="/screenshots/bulletinEx.png" height=300/>
 
 The bulletin board displays other users posts on the bulletin page. To add a new post, click create post. Then after inputing a message. It stores to the database and appears to the left.
 
 
 ### Shopping List
 
-<img src="/screenshots/listEx.png" />
+<img src="/screenshots/listEx.png" height=300 />
 
 The shopping list uses the spoonacular API to display a food item when entered. First, type a food item into the search bar, a picture of that item should show up. Click on the picture to add it to the list below and the database. The item can be removed by clicking on the image in the list.
 
 
 ### Group Calendar
 
-<img src="/screenshots/calendarEx.png" />
+<img src="/screenshots/calendarEx.png"  height=300 />
 
 The calendar page displays a calendar that all members have access to. They can view and edit the calendar events of all roommates. An event can be created by clicking on the calendar, inputing a name, and dragging to fit the specified time.
 
