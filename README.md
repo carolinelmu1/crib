@@ -6,9 +6,9 @@ We used google docs to create a [Design Document](https://docs.google.com/docume
 
 ### Day Pilot for Calendar
 
-| Name                                                                                              | Description                |
-| ------------------------------------------------------------------------------------------------- | -------------------------- |
-| [`@daypilot/daypilot-lite-react`](https://code.daypilot.org/42221/react-weekly-calendar-tutorial) | Plain JavaScript component |
+| Name                                                                                              | Description              |
+| ------------------------------------------------------------------------------------------------- | ------------------------ |
+| [`@daypilot/daypilot-lite-react`](https://code.daypilot.org/42221/react-weekly-calendar-tutorial) | React Calendar Component |
 
 ## Functionality
 
