@@ -15,9 +15,9 @@ const Home = () => {
           to use this as a virtual hub for fundamental communication between roommates.
         </div>
         <div class="chatband">
-          <h1>Chat</h1>
-          The chat on The Crib connects roommates through one group chat. The feed includes all
-          roommate responses for each person to access.
+          <h1>Bulletin Board</h1>
+          The bulletin board on The Crib connects roommates through one communication board. The
+          feed includes all roommate posts for each person to access.
         </div>
         <div class="listband">
           <h1>Shopping List</h1>

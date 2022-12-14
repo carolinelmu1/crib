@@ -37,10 +37,10 @@ export default function Chat() {
   return (
     <div className="Chat">
       <header>
-        <div class="title">Group Chat</div>
+        <div class="title">Bulletin Board</div>
         {user && (
           <button class="articleButton" onClick={() => setWriting(true)}>
-            New Article
+            Create Post
           </button>
         )}
       </header>

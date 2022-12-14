@@ -6,7 +6,8 @@
   left: 0;
   bottom: 0;
   display: grid;
-  margin-left: 20%;
+  margin-left: 15%;
+  margin-right: 15%;
 }
 .topband {
   background-color: #232931;
