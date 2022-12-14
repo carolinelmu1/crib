@@ -1,8 +1,7 @@
 # The Crib
 
-<<<<<<< HEAD
 The Crib is a web application that creates a simplified dashboard for roommates to communicate household needs, schedules, shared events, etc.. The goal of this project is to simplify and streamline communication for college students and young adults who share roomates. The application features three primary features: a bulletin board for roomates to have a source of centralized communication, a shared shopping list which implements the spoonacular API, and a group calendar where roomates can share events and schedules for efficent time management. The Crib is hosted via Firestore and users are authenticated via Firebase Auth.
-=======
+
 ### Live Link: https://the-crib-51d5e.web.app
 
 <img src="/screenshots/homeScreen.png" />
