@@ -10,7 +10,7 @@ header,
 .user {
   display: flex;
   justify-content: space-between;
-  background-color: black;
+  background: #393e46;
   color: white;
   grid-column: 1 / span 2;
   padding: 10px 5px;
@@ -25,6 +25,29 @@ header,
   font-size: 30px;
   padding-top: 5px;
   font-family: Georgia, 'Times New Roman', Times, serif;
+}
+.itemOutput {
+  /* border: solid #393e46;
+  border-width: 10px; */
+  display: flex;
+  flex-direction: column;
+}
+.itemRow {
+  display: flex;
+  flex-direction: row;
+  margin: -25px;
+}
+.itemImage {
+  background: white;
+  width: 250px;
+}
+figcaption {
+  background: #4ecca3;
+  color: black;
+  width: 250px;
+  padding-top: 20px;
+  font-size: 40px;
+  float: right;
 }
 
 form {
@@ -52,7 +75,6 @@ article {
 
 nav {
   color: #eeeeee;
-  text-shadow: 6px 6px 6px rgb(75, 1, 75);
   background: #393e46;
 }
 
@@ -113,6 +135,7 @@ figure {
   padding-bottom: 0;
   font-size: 3.49rem;
   font-weight: 300;
+  background: #393e46;
 }
 .container {
   margin: 0 auto;
@@ -120,14 +143,27 @@ figure {
   color: #eeeeee;
   text-align: center;
 }
+.itembar {
+  align-items: center;
+}
+.items {
+  height: 30px;
+  text-align: center;
+  font-size: 1.3rem;
+  padding-right: 25%;
+  padding-left: 25%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
 .topheader {
   padding: 20px 0 10px 0;
   background: #393e46;
-  text-align: center;
 }
 .header__username {
   margin: 0;
   font-size: 1.3rem;
+  background: #393e46;
 }
 .overall_background {
   width: auto;

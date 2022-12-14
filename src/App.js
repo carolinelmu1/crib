@@ -6,10 +6,31 @@ import Chat from './pages/groupChat/Chat'
 import List from './pages/shopping/List'
 import Calendar from './pages/Calendar/Calendar'
 import Home from './pages'
+import logo from './logo.png'
+import { SignIn, SignOut, useAuthentication } from './components/services/authService'
 
 function App() {
+  const user = useAuthentication()
   return (
     <div class="static-site">
+      <div class="side-nav">
+        <img src={logo} alt="Crib Logo" width="200" height="200" />
+        <h1>Roommates </h1>
+        <ul>
+          <div class="primary">
+            <h3>{!user ? <SignIn /> : <SignOut />}</h3>
+          </div>
+          <div class="secondary">
+            <h3>Member 2</h3>
+          </div>
+          <div class="secondary">
+            <h3>Member 3</h3>
+          </div>
+          <div class="secondary">
+            <h3>Member 4</h3>
+          </div>
+        </ul>
+      </div>
       <div class="top-nav">
         <Router>
           <Navbar />

@@ -35,7 +35,6 @@ export default function Chat() {
       setWriting(false)
     })
   }
-
   return (
     <div className="Chat">
       <header>
@@ -50,7 +49,6 @@ export default function Chat() {
         )}
         <div class="user">{!user ? <SignIn /> : <SignOut />}</div>
       </header>
-
       {!user ? '' : <Nav articles={articles} setArticle={setArticle} />}
 
       {!user ? (

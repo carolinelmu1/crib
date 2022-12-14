@@ -1,22 +1,26 @@
 .Chat {
   display: grid;
   grid-template-rows: min-content auto;
-  grid-template-columns: 250px auto;
+  grid-template-columns: 50% auto;
   height: 100vh;
   overflow: scroll;
+  margin-left: 20%;
 }
 
 header,
 .user {
   display: flex;
   justify-content: space-between;
-  background-color: black;
+  background-color: #393e46;
   color: white;
   grid-column: 1 / span 2;
   padding: 10px 5px;
   font-size: 20px;
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva,
     Verdana, sans-serif;
+}
+.header {
+  background: #393e46;
 }
 
 .title {
@@ -25,6 +29,7 @@ header,
   font-size: 30px;
   padding-top: 5px;
   font-family: Georgia, 'Times New Roman', Times, serif;
+  background: #393e46;
 }
 
 form {
@@ -47,13 +52,11 @@ article {
 }
 
 article {
-  background-image: url(https://lh5.googleusercontent.com/proxy/LXsMGDxCOddmea458WA67VZxScxl6yYfii0m3sR_QNRsr93LUfngth_mZG9kcCI7pwqnGfjkl_UQTN9eEXj1u72jqmvib33cFpZfQvhs66BWNeeu3pMqYuiu0lu1wC_6x9p4LOklaDqrSwACrlH-lB0uSd7XkBsTdtyz6v4=w1200-h630-p-k-no-nu);
+  background-color: #393e46;
 }
 
 nav {
   color: white;
-  text-shadow: 6px 6px 6px rgb(75, 1, 75);
-  background-image: linear-gradient(180deg, blue, rgb(16, 190, 129));
 }
 
 nav p:hover {
@@ -92,7 +95,7 @@ article .body {
   height: 35px;
   margin-left: 3%;
   margin-top: 5px;
-  background-color: rgb(16, 190, 129);
+  background-color: rgb(78, 204, 163);
 }
 
 .articleButton:hover {
