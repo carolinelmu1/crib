@@ -1,6 +1,6 @@
 # The Crib
 
-<img src="/screenshots/homescreen.png" />
+<img src="/screenshots/homeScreen.png" />
 
 We used google docs to create a [Design Document](https://docs.google.com/document/d/1qVWHEj-IDcK8vzpuq9Sd558u5bWY9UGDGsRuFjIjNYI/edit?usp=sharing).
 
