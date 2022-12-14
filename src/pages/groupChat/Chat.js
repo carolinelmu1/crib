@@ -25,8 +25,11 @@ export default function Chat() {
 
   // Update the "database" *then* update the internal React state. These
   // two steps are definitely necessary.
-  function addArticle({ title, body }) {
-    createArticle({ title, body }).then(article => {
+  // function addArticle({ title, body, displayName }) {
+  const addArticle = obj => {
+    console.log('ADD ARTICLE > obj: ', obj)
+
+    createArticle(obj).then(article => {
       setArticle(article)
       setArticles([article, ...articles])
       setWriting(false)
