@@ -48,7 +48,6 @@ form textarea {
 nav,
 article {
   height: 100%;
-  padding: 10px;
 }
 
 article {
@@ -93,7 +92,8 @@ article .body {
   border-radius: 25%;
   width: 100px;
   height: 35px;
-  margin-left: 3%;
+  margin-right: auto;
+  align-self: center;
   margin-top: 5px;
   background-color: rgb(78, 204, 163);
 }
@@ -101,10 +101,4 @@ article .body {
 .articleButton:hover {
   scale: 1.1;
   opacity: 0.9;
-}
-
-.image_logo {
-  width: 60px;
-  height: 60px;
-  margin-right: 7%;
 }

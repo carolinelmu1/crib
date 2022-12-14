@@ -2,10 +2,9 @@ import { useEffect, useState } from 'react'
 import Nav from './Nav'
 import Article from './Article'
 import ArticleEntry from './ArticleEntry'
-import { SignIn, SignOut, useAuthentication } from '../../components/services/authService'
+import { useAuthentication } from '../../components/services/authService'
 import { fetchArticles, createArticle } from '../../components/services/articleService'
 import './Chat.css'
-import logo from '../../logo.png'
 
 export default function Chat() {
   const [articles, setArticles] = useState([])
@@ -38,16 +37,12 @@ export default function Chat() {
   return (
     <div className="Chat">
       <header>
-        <div class="title">
-          <img src={logo} class="image_logo" alt="Crib Logo" />
-          Group Chat
-        </div>
+        <div class="title">Group Chat</div>
         {user && (
           <button class="articleButton" onClick={() => setWriting(true)}>
             New Article
           </button>
         )}
-        <div class="user">{!user ? <SignIn /> : <SignOut />}</div>
       </header>
       {!user ? '' : <Nav articles={articles} setArticle={setArticle} />}
 

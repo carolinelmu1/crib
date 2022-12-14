@@ -18,7 +18,8 @@ function App() {
         <h1>Roommates </h1>
         <ul>
           <div class="primary">
-            <h3>{!user ? <SignIn /> : <SignOut />}</h3>
+            {' '}
+            <h3>{!user ? <SignIn /> : <SignOut />}</h3>{' '}
           </div>
           <div class="secondary">
             <h3>Member 2</h3>
