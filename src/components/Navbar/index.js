@@ -6,16 +6,16 @@ const Navbar = () => {
     <>
       <Nav>
         <NavMenu>
-          <NavLink to="/" activeStyle>
+          <NavLink to="/">
             Home
           </NavLink>
-          <NavLink to="/chat" activeStyle>
+          <NavLink to="/chat">
             Chat
           </NavLink>
-          <NavLink to="/list" activeStyle>
+          <NavLink to="/list">
             List
           </NavLink>
-          <NavLink to="/calendar" activeStyle>
+          <NavLink to="/calendar">
             Calendar
           </NavLink>
         </NavMenu>
