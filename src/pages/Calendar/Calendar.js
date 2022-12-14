@@ -6,6 +6,7 @@ import './Calendar.css'
 import { setDoc } from 'firebase/firestore'
 import { auth } from '../../firebaseConfig'
 import { deleteCalendarEvent, fetchCalendar } from '../../components/services/calendarService'
+import randomColor from 'randomcolor'
 
 const styles = {
   wrap: {
@@ -42,6 +43,7 @@ class Calendar extends Component {
           end: args.end,
           id: DayPilot.guid(),
           text: modal.result,
+          backColor: randomColor(),
         }
         dp.events.add(event)
 
@@ -50,6 +52,7 @@ class Calendar extends Component {
           end: `${event.end}`,
           id: `${event.id}`,
           text: `${event.text}`,
+          backColor: `${event.backColor}`,
           userID: auth.currentUser.uid,
         })
       },
@@ -72,25 +75,27 @@ class Calendar extends Component {
       onEventMove: async args => {
         console.log('EVENT MOVED!!!!', args, args.e.data.id)
 
-        const { id, text } = args.e.data // extract the ID from the given event data
+        const { id, text, backColor } = args.e.data // extract the ID from the given event data
 
         await setDoc(doc(db, 'events', id), {
           start: `${args.newStart}`,
           end: `${args.newEnd}`,
           text,
+          backColor,
           userID: auth.currentUser.uid,
         })
       },
       onEventResize: async args => {
         console.log('EVENT RESIZED!!!!', args)
 
-        const { id, text, userID } = args.e.data // extract the ID from the given event data
+        const { id, text, backColor } = args.e.data // extract the ID from the given event data
 
         await setDoc(doc(db, 'events', id), {
           start: `${args.newStart}`,
           end: `${args.newEnd}`,
           text,
-          userID,
+          backColor,
+          userID: auth.currentUser.uid,
         })
       },
     }

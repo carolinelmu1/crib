@@ -3,23 +3,7 @@
 // to read or write data, they have to go through this service.
 
 import { db } from '../../firebaseConfig'
-import {
-  collection,
-  query,
-  getDocs,
-  addDoc,
-  orderBy,
-  limit,
-  Timestamp,
-  deleteDoc,
-  doc,
-} from 'firebase/firestore'
-
-export async function createCalendar({ title, body }) {
-  const data = { title, body, date: Timestamp.now().toDate().toString() }
-  const docRef = await addDoc(collection(db, 'calendar'), data)
-  return { id: docRef.id, ...data }
-}
+import { collection, query, getDocs, orderBy, limit, deleteDoc, doc } from 'firebase/firestore'
 
 // NOT FINISHED: This only gets the first 20 articles. In a real app,
 // you implement pagination.
