@@ -5,7 +5,6 @@
 import { db } from '../../firebaseConfig'
 import { collection, query, getDocs, addDoc, orderBy, limit, Timestamp } from 'firebase/firestore'
 
-
 export async function createArticle({ title, body, displayName }) {
   const data = { title, body, displayName, date: Timestamp.now().toDate().toString() }
   const docRef = await addDoc(collection(db, 'articles'), data)
